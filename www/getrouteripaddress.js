@@ -1,8 +1,9 @@
-var getrouteripaddress = function() {
-};
+RouterIpAddress = {
+    getRouterIPAddress: function() {
+        return new Promise(function (resolve, reject) {
+            cordova.exec(resolve, reject, "GetRouterIPAddress", "getRouterIPAddress", []);
+        });
+    }
+}
 
-getrouteripaddress.getRouterIPAddress = function(success, fail) {
-    cordova.exec(success, fail, "GetRouterIPAddress", "getRouterIPAddress", []);
-};
-
-module.exports = getrouteripaddress;
+module.exports = RouterIpAddress;
